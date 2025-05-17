@@ -1,4 +1,4 @@
-package com.courier.tracking;
+package main.java.com.courier.tracking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
