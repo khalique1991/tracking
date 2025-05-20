@@ -151,8 +151,12 @@
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>appengine-maven-plugin</artifactId>
-				<version>2.4.4</version>  <configuration>
-				<enableJarClasses>false</enableJarClasses>  </configuration>
+				<version>2.4.4</version>
+				<configuration>
+				<enableJarClasses>false</enableJarClasses>
+					<projectId>tracking-460412</projectId>
+					<deploy.version>V1</deploy.version>
+				</configuration>
 			</plugin>
 		</plugins>
 

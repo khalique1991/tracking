@@ -4,9 +4,9 @@ metadata:
   name: your-app-service
 spec:
   selector:
-    app: your-app
+    app: your-app  #  Match the labels in the Deployment
   ports:
     - protocol: TCP
-      port: 80 # External port
-      targetPort: 8080 # Container port
-  type: LoadBalancer # Expose externally
+      port: 80  #  Port the Service exposes within the cluster
+      targetPort: 8080  #  Port the container listens on
+  type: ClusterIP # Or NodePort, or LoadBalancer
