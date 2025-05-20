@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-app-deployment
+spec:
+  replicas: 3 # Number of instances
+  selector:
+    matchLabels:
+      app: your-app
+  template:
+    metadata:
+      labels:
+        app: your-app
+    spec:
+      containers:
+        - name: your-app
+          image: gcr.io/YOUR_PROJECT_ID/your-app-image:v1 # Use the image you pushed
+          ports:
+            - containerPort: 8080 # Or the port your app listens on
