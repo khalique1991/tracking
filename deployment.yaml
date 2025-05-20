@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: your-app-deployment
 spec:
-  replicas: 3 # Number of instances
+  replicas: 3  # Number of instances to run
   selector:
     matchLabels:
       app: your-app
@@ -13,7 +13,17 @@ spec:
         app: your-app
     spec:
       containers:
-        - name: your-app
-          image: gcr.io/YOUR_PROJECT_ID/your-app-image:v1 # Use the image you pushed
+        - name: your-app-container
+          image: your-app-name:latest # Use the Docker image you built
           ports:
-            - containerPort: 8080 # Or the port your app listens on
+            - containerPort: 8080
+          env:
+            - name: SOME_ENV_VAR
+              value: "some-value"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
